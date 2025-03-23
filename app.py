@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 import random
+import os
 
 app = Flask(__name__)
 app.secret_key = 'secret'
@@ -134,3 +135,8 @@ def submit_choice():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render provides PORT
+    app.run(host="0.0.0.0", port=port)
+
+
+    
