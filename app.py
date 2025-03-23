@@ -131,7 +131,6 @@ def submit_choice():
     session["state"] = state
     return jsonify(state)
 
-@app.route("/get_summary_stats")
 
 if __name__ == "__main__":
     app.run(debug=True)
