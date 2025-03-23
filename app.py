@@ -4,7 +4,7 @@ import random
 import os
 
 app = Flask(__name__)
-app.secret_key = 'secret'
+app.secret_key = os.environ.get("SECRET_KEY", "fallback-key")
 CORS(app)
 
 # the AJAX request will be sent to this route, and the flask will send back the initial starting values
